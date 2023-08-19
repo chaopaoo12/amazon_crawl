@@ -1,5 +1,5 @@
-from core.source_page import read_data_from, get_soup
-from process.process_product_info import get_fivepoints, get_labels
+from amazon_crawl.core.source_page import read_data_from, get_soup
+from amazon_crawl.process.process_product_info import get_fivepoints, get_labels
 
 def get_product_info(driver, url):
     driver = read_data_from(driver, url)

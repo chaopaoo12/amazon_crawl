@@ -1,7 +1,7 @@
-from process.process_store_page import read_info_bystore
+from amazon_crawl.process.process_store_page import read_info_bystore
 import time
-from core.source_page import read_data_from, get_soup
-from core.base_func import scroll
+from amazon_crawl.core.source_page import read_data_from, get_soup
+from amazon_crawl.core.base_func import scroll
 import pandas as pd
 
 

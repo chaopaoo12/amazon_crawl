@@ -1,6 +1,6 @@
-from core.source_page import read_data_from, get_soup
-from core.base_func import scroll
-from process.process_channel_page import read_info_byChannel
+from amazon_crawl.core.source_page import read_data_from, get_soup
+from amazon_crawl.core.base_func import scroll
+from amazon_crawl.process.process_channel_page import read_info_byChannel
 import pandas as pd
 import time
 

@@ -1,5 +1,5 @@
-from process.process_category_page import get_category_info
-from core.source_page import read_data_from, get_soup
+from amazon_crawl.process.process_category_page import get_category_info
+from amazon_crawl.core.source_page import read_data_from, get_soup
 import pandas as pd
 
 def serch_category_tree(start_url, driver):

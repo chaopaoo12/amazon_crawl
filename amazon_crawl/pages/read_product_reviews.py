@@ -1,5 +1,5 @@
-from process.process_reviews import get_review_info,get_review
-from core.source_page import read_data_from, get_soup
+from amazon_crawl.process.process_reviews import get_review_info,get_review
+from amazon_crawl.core.source_page import read_data_from, get_soup
 import pandas as pd
 
 def get_product_reviews(url, driver):
