@@ -32,7 +32,10 @@ def read_data_from(driver, url, postal=None, k=15):
                 change_address(driver, postal)
                 posta = get_address(driver)
         if k > 0:
-            scroll(driver)
+            try:
+                scroll(driver)
+            except:
+                pass
             time.sleep(k)
     return(driver)
 
