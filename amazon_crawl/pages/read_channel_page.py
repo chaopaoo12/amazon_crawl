@@ -14,6 +14,7 @@ def get_product_info_channel(url, driver):
         html = get_soup(driver)
         temp = read_info_byChannel(html)
         while temp.shape[0] < 50:
+            print(temp.shape)
             scroll(driver)
             time.sleep(5)
             html = get_soup(driver)
