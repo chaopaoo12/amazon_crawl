@@ -13,11 +13,6 @@ def get_product_byasin(asin, driver):
         driver = read_data_from(driver, search_url)
         html = get_soup(driver)
         temp = read_info_bystore(html)
-        while temp.shape[0] < 50:
-            scroll(driver)
-            time.sleep(5)
-            html = get_soup(driver)
-            temp = read_info_bystore(html)
         products = products.append(temp)
     return(products)
 
