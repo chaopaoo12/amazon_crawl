@@ -5,8 +5,12 @@ import pandas as pd
 def serch_category_tree(start_url, driver):
     driver = read_data_from(driver, start_url)
     res = get_soup(driver)
+    while res.find('div',attrs={'role':"group"}) is None:
+        print(1)
+        res = get_soup(driver)
 
     urls = get_category_info(res)
+
     urls = pd.DataFrame({'channel':urls[0],'url':urls[1],'parent':urls[2]})
 
     data = pd.DataFrame()
