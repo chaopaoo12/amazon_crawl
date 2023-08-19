@@ -13,14 +13,16 @@ def get_product_info_channel(url, driver):
         driver = read_data_from(driver, i, k = 15)
         html = get_soup(driver)
         temp = read_info_byChannel(html)
+        temp_k = 0
         while temp.shape[0] < 50:
             print(temp.shape)
-            if temp.shape[0] == 0:
+            if temp.shape[0] == 0 or temp_k == temp.shape[0]:
                 driver = read_data_from(driver, i, k = 15)
             scroll(driver)
             time.sleep(5)
             html = get_soup(driver)
             temp = read_info_byChannel(html)
+            temp_k = temp.shape[0]
         res = res.append(temp)
 
     return(res)

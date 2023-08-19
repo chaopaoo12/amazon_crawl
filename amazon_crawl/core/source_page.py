@@ -35,6 +35,7 @@ def read_data_from(driver, url, postal=None, k=15):
             try:
                 scroll(driver)
             except:
+                print('scroll failed')
                 pass
             time.sleep(k)
     return(driver)
