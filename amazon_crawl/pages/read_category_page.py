@@ -25,7 +25,8 @@ def serch_category_tree(start_url, driver):
 
             for index, row in group.iterrows():
                 print('root:', name, row[0])
-                res = read_data_from(driver, 'https://www.amazon.com' + row[1], k=0)
+                driver = read_data_from(driver, 'https://www.amazon.com' + row[1], k=0)
+                res = get_soup(driver)
                 res = get_category_info(res)
 
                 res = pd.DataFrame({'channel':res[0],'url':res[1], 'parent':res[2]})
