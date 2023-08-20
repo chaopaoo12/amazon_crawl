@@ -22,9 +22,11 @@ def read_data_from(driver, url, postal=None, k=15):
     print('read data from:',url)
 
     if url is not None:
-
-        driver.get(url)
-
+        try:
+            driver.get(url.encode('ascii', 'ignore').decode('unicode_escape'))
+        except:
+            print(url)
+        driver.implicitly_wait(10)
         if postal is not None:
             posta = get_address(driver)
             while posta != postal:

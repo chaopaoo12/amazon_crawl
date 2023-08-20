@@ -13,7 +13,7 @@ def get_product_byasin(asin, driver):
         driver = read_data_from(driver, search_url)
         html = get_soup(driver)
         temp = read_info_bystore(html)
-        products = products.append(temp)
+        products = pd.concat([temp, products])
     return(products)
 
 
@@ -26,7 +26,7 @@ def get_product_info_store(driver, store, market_id):
         driver = read_data_from(driver, pages)
         html = get_soup(driver)
         temp = read_info_bystore(html)
-        res = res.append(temp)
+        res = pd.concat([temp, res])
     res = res.assign(store = store,
                      market_id = market_id)
     return(res)
