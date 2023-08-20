@@ -46,7 +46,7 @@
 
 
 ```
-pip install quantaxis -U
+pip install amazon_crawl -U
 ```
 ### 3.2  本地代码 开发式安装
 
