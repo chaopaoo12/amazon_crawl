@@ -33,11 +33,11 @@
 ### 1.6 分频道采集的并发版本
 
 ### 1.7 待开发功能
-根据五点+评论+title 做词频分析 接chatgpt写五点与title
+根据五点+评论+title做词频分析;接chatgpt写五点与title
 
 ##  2. 零成本使用指南
-使用请配合科学上网软件构建所需市场的网络环境
-就美区而言 推荐使用cloudflare的worker vless + V2ray + 伪装美区IP
+使用请配合科学上网软件构建所需市场的网络环境.
+就美区而言 推荐使用cloudflare的worker vless + V2ray + 伪装美区IP.
 程序部署环境可以直接访问美区amazon为网络检测标准
 
 ##  3. 安装和部署
