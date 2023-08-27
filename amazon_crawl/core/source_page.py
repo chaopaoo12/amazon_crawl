@@ -1,4 +1,6 @@
 from bs4 import BeautifulSoup
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 from .base_func import scroll
 
@@ -19,27 +21,37 @@ def get_soup(driver):
 
 
 def read_data_from(driver, url, postal=None, k=15):
-    print('read data from:',url)
+    print('read data from:', url)
 
     if url is not None:
         try:
             driver.get(url.encode('ascii', 'ignore').decode('unicode_escape'))
+            #element = EC.url_changes(url)
+            #try:
+            #    WebDriverWait(driver, 5).until(element)
+            #    flag1 = element(driver)
+            #except:
+            #    flag1 = element(driver)
+
+            #if flag1
+            #driver.implicitly_wait(10)
+            if k > 0:
+                try:
+                    scroll(driver)
+                except:
+                    print('scroll failed')
+                    pass
+            time.sleep(6)
         except:
             print(url)
-        driver.implicitly_wait(10)
+
         if postal is not None:
             posta = get_address(driver)
             while posta != postal:
                 print(posta)
                 change_address(driver, postal)
                 posta = get_address(driver)
-        if k > 0:
-            try:
-                scroll(driver)
-            except:
-                print('scroll failed')
-                pass
-            time.sleep(k)
+
     return(driver)
 
 

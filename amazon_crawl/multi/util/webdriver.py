@@ -11,5 +11,5 @@ def init_driver(proxy = '--proxy-server=http://127.0.0.1:10809'):
                'User-Agent': ua_use,
                'Connection': 'keep-alive',
                }
-    driver = get_driver(headers, proxy)
+    driver = get_driver(headers, None)
     return(driver)
